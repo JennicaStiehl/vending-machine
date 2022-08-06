@@ -10,15 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_05_221416) do
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
-    t.decimal "price"
-    t.integer "code"
-    t.integer "vendor_id"
+ActiveRecord::Schema[7.0].define(version: 2022_08_06_005230) do
+  create_table "coins", force: :cascade do |t|
+    t.decimal "weight"
+    t.decimal "size"
+    t.integer "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "machines", force: :cascade do |t|
+    t.string "name"
+    t.integer "Product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Product_id"], name: "index_machines_on_Product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.decimal "price"
+    t.string "code"
+    t.integer "vendor_id"
+    t.integer "machine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["machine_id"], name: "index_products_on_machine_id"
     t.index ["vendor_id"], name: "index_products_on_vendor_id"
   end
 
