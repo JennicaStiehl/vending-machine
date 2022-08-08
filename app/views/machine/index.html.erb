@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+      <style>
+      body {
+        font-family: sans-serif;
+        font-size: smaller;
+        padding: 10px 0;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      table tr th, table tr td {
+        border: 1px solid #d3d3d3;
+        padding: 10px;
+      }
+      table tr th {
+        padding: 5px 10px;
+        white-space: nowrap;
+        color: #808080;
+        font-size: smaller;
+        text-transform: uppercase;
+        font-weight: normal;
+        text-align: left;
+      }
+      table tr td {
+        padding: 5px 10px;
+        vertical-align: top;
+      }
+      table tr td.right-align {
+        text-align: right;
+      }
+      h3 {
+        margin: 30px 0 2px;
+      }
+      h3 span.title {
+        color: #808080;
+      }
+      hr {
+        margin: 25px 0;
+      }
+    </style>
+  </head>
+  <body>
+        <h1><span class="title">Product List</span></h1>
+
+        <hr>
+
+        <%= render partial: 'product_table', locals: {products: @products } unless @products.count.zero? %>
+
+        <hr>
+
+        <%= form_with scope: "product", url: "/dispense", method: :get do  |form| %>
+          <%= form.label :code, "Enter product code:" %>
+          <%= form.number_field :code, placeholder: 'code', disabled: false %>
+          <%= form.submit "Dispense" %>
+          <% end %>
+
+          <% if !!flash[:errors] %>
+            <% flash[:errors].each do |e| %>
+              <p><%= e %></p> <br>
+            <% end %>
+          <% end %>
+
+    </body>
+</html>

@@ -59,6 +59,7 @@ group :development, :test do
   gem 'launchy'
   gem 'simplecov'
   gem 'byebug', platforms: :ruby
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -77,4 +78,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'database_cleaner-active_record'
 end

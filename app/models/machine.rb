@@ -3,8 +3,8 @@ class Machine < ApplicationRecord
 
     has_many :Products
 
-    def self.dispense_product(code)
-        product = take_code(code)
+    def self.dispense_product(id)
+        product = take_code(id)
         # take_coins(product.price)
         # validate_coins
         deliver(product.category)
@@ -17,8 +17,8 @@ class Machine < ApplicationRecord
     def self.validate_coins
     end
 
-    def self.take_code(code)
-        Product.find_by(code: code.to_s)
+    def self.take_code(id)
+        Product.find(id)
     end
 
     def self.deliver(product)
