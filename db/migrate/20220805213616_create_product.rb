@@ -4,7 +4,6 @@ class CreateProduct < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :category
       t.decimal :price
-      t.string :code
       t.references :vendor
       t.references :machine
 

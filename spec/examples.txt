@@ -1,0 +1,11 @@
+example_id                                      | status | run_time        |
+----------------------------------------------- | ------ | --------------- |
+./spec/models/coin_spec.rb[1:1:1]               | passed | 0.02737 seconds |
+./spec/models/machine_spec.rb[1:1:1]            | passed | 0.00281 seconds |
+./spec/models/machine_spec.rb[1:1:2]            | passed | 0.00032 seconds |
+./spec/models/machine_spec.rb[1:2:1:1]          | passed | 0.00276 seconds |
+./spec/models/product_spec.rb[1:1:1]            | passed | 0.01976 seconds |
+./spec/models/vendor_spec.rb[1:1:1]             | passed | 0.00193 seconds |
+./spec/models/vendor_spec.rb[1:1:2]             | passed | 0.00036 seconds |
+./spec/requests/machine_controller_spec.rb[1:1] | passed | 0.06909 seconds |
+./spec/requests/machine_controller_spec.rb[1:2] | passed | 0.05037 seconds |

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Coin, type: :model do
+RSpec.describe Coin, type: :model do
     describe 'validations' do
         it 'validates presence of attributes' do
             should validate_presence_of :weight

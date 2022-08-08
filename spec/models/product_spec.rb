@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-describe Product, type: :model do
+RSpec.describe Product, type: :model do
     describe 'validations' do
         it 'validates presence of attributes' do
             should validate_presence_of :category
             should validate_presence_of :price
-            should validate_presence_of :code
             should validate_presence_of :name
         end
     end

@@ -31,7 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_06_005230) do
     t.string "name"
     t.string "category"
     t.decimal "price"
-    t.string "code"
     t.integer "vendor_id"
     t.integer "machine_id"
     t.datetime "created_at", null: false
